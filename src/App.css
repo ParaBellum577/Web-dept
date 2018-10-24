@@ -1,0 +1,12 @@
+.row {
+  display: inline-flex;
+}
+
+
+
+.empty-cell {
+  margin: 25px;
+  width: 202px;
+  height: 252px;
+  position: relative;
+}
