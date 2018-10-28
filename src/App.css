@@ -1,5 +1,5 @@
 .row {
-  display: inline-flex;
+  display: flex;
 }
 
 
@@ -9,4 +9,5 @@
   width: 202px;
   height: 252px;
   position: relative;
+
 }

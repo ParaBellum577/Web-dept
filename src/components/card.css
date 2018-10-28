@@ -1,6 +1,6 @@
 body{
   background-image: url(https://images.pexels.com/photos/1092364/pexels-photo-1092364.jpeg?cs=srgb&dl=bricks-pattern-texture-1092364.jpg&fm=jpg);
-
+  display: flex;
 }
 .cell {
 
