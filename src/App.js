@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Card from './components/card.js'
 
@@ -125,8 +124,9 @@ componentDidMount(){
       res.push(row[i])
     }
     return (
-      res.map((cell, cellIndex) => (
+    res.map((cell, cellIndex) => (
         cell ? <Card
+          key={rowIndex + '' + cellIndex}
           data={cell}
           rowIndex={rowIndex}
           cellIndex={cellIndex}
@@ -137,18 +137,17 @@ componentDidMount(){
           handleDelete={this.handleDelete}
           isRightEmpty={!this.state.rows[rowIndex][cellIndex + 1]}
           isBottomEmpty={!this.state.rows[rowIndex + 1] || !this.state.rows[rowIndex + 1][cellIndex]}
-        /> : <div className='empty-cell' />
+        /> : <div key={rowIndex + '' + cellIndex} className='empty-cell' > </div>
       ))
     )
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="App">
         {this.state.rows.map((row, rowIndex) => {
           return (
-            <div className='row' >
+            <div className='row' key={rowIndex}>
               {this.createCells(row, rowIndex)}
             </div>
           )
