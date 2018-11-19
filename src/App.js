@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Card from './components/card.js'
+import Card from './components/card';
+import Signup from './components/Signup';
+import { Switch, Route } from 'react-router-dom';
 
 class App extends Component {
     state = {
@@ -14,6 +16,7 @@ class App extends Component {
         ]
     }
   ;
+  
   handleDescriptionChange = (rowIndex, cellIndex, description) => {
 
     const rows = [
@@ -117,7 +120,6 @@ componentDidMount(){
 };
 
 }
-
   createCells = (row, rowIndex) => {
     const res = []
     for(let i = 0; i < row.length; i++) {
@@ -142,17 +144,28 @@ componentDidMount(){
     )
   }
 
-  render() {
+  renderTable= () =>{
     return (
-      <div className="App">
-        {this.state.rows.map((row, rowIndex) => {
-          return (
-            <div className='row' key={rowIndex}>
-              {this.createCells(row, rowIndex)}
-            </div>
-          )
-        })}
-      </div>
+    <div className="App">
+      {this.state.rows.map((row, rowIndex) => {
+        return (
+         <div className='row' key={rowIndex}>
+            {this.createCells(row, rowIndex)}
+         </div>
+               );
+      }
+    )
+  }
+        </div>
+    );
+  }
+
+  render() {
+    return (  
+    <Switch>
+      <Route path="/signup" component={Signup}/> 
+      <Route path="/table"component={this.renderTable}/>
+    </Switch>
     );
   }
 }
