@@ -1,9 +1,7 @@
 # Web-dept
 React SPA
-Тестовое задание Web-dept
 
-Для запуска приложения нужно: 
-1. Склонировать проект. 
-2. Загрузить библиотеки с помощью команды npm install. 
-3. Запустить проект локально с помощью команды npm start. 
-4. Открыть приложение на localhost:3000. 
+1. Clone repo. 
+2. npm install. 
+3. npm start. 
+4. open app on localhost:3000. 
